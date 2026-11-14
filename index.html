@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzammil Woodcraft | Handcrafted Wooden Furniture & Custom Woodworks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --wood-dark: #2C1A11;
+            --wood-primary: #5C3A21;
+            --wood-accent: #B87333;
+            --wood-gold: #D4A373;
+            --bg-cream: #FAF7F2;
+            --bg-card: #FFFFFF;
+            --text-main: #1F1712;
+            --text-muted: #5F544D;
+            --whatsapp-green: #25D366;
+            --border-light: #E8DFD5;
+            --shadow-sm: 0 4px 12px rgba(44, 26, 17, 0.06);
+            --shadow-md: 0 12px 28px rgba(44, 26, 17, 0.12);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            color: var(--wood-dark);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--wood-primary);
+            color: #fff;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text small {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.72rem;
+            color: var(--wood-accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--wood-accent);
+        }
+
+        .nav-cta {
+            background: var(--wood-dark);
+            color: #fff;
+            padding: 0.65rem 1.25rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--wood-primary);
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--wood-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4.5rem 1.5rem 5rem;
+            background: linear-gradient(135deg, #2C1A11 0%, #4A2C18 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(212, 163, 115, 0.18) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(212, 163, 115, 0.2);
+            color: var(--wood-gold);
+            border: 1px solid rgba(212, 163, 115, 0.35);
+            padding: 0.4rem 0.95rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            color: #FFFDF9;
+        }
+
+        .hero p {
+            color: #E2D6CA;
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--wood-gold);
+            color: var(--wood-dark);
+            padding: 0.9rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #e2b588;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            padding: 0.9rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .stat-box {
+            background: rgba(0, 0, 0, 0.22);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(212, 163, 115, 0.18);
+        }
+
+        .stat-box h3 {
+            font-size: 1.85rem;
+            color: var(--wood-gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-box p {
+            font-size: 0.85rem;
+            color: #D7C8BA;
+            margin: 0;
+        }
+
+        /* Section Generic */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 3.25rem;
+        }
+
+        .section-tag {
+            color: var(--wood-accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+            color: var(--wood-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-btn {
+            background: #fff;
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            padding: 0.55rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--wood-dark);
+            color: #fff;
+            border-color: var(--wood-dark);
+        }
+
+        /* Product Cards Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-visual {
+            height: 200px;
+            background: linear-gradient(135deg, #EADBC8 0%, #D4B996 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        .product-visual svg {
+            width: 82px;
+            height: 82px;
+            stroke: var(--wood-dark);
+        }
+
+        .category-pill {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(44, 26, 17, 0.88);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+        }
+
+        .product-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-body h3 {
+            font-size: 1.3rem;
+            color: var(--wood-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-body p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .wood-type {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--wood-primary);
+        }
+
+        .order-link {
+            background: var(--bg-cream);
+            color: var(--wood-dark);
+            border: 1px solid var(--border-light);
+            padding: 0.45rem 0.95rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .order-link:hover {
+            background: var(--wood-accent);
+            color: #fff;
+            border-color: var(--wood-accent);
+        }
+
+        /* Craftsmanship / Why Us */
+        .features-section {
+            background: #F2EBE1;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(184, 115, 51, 0.14);
+            color: var(--wood-accent);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--wood-dark);
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Custom Order Form & Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 2.5rem;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-info {
+            background: var(--wood-dark);
+            color: #fff;
+            padding: 2.25rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info h3 {
+            font-size: 1.65rem;
+            color: var(--wood-gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-info p {
+            color: #DFD3C8;
+            font-size: 0.95rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-list li {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.92rem;
+        }
+
+        .info-list strong {
+            color: var(--wood-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.15rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 0.4rem;
+            color: var(--wood-dark);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--bg-cream);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--wood-accent);
+            background: #fff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--whatsapp-green);
+            color: #0B3B1E;
+            border: none;
+            padding: 0.95rem 1.5rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1B100A;
+            color: #C7B9AE;
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-sub {
+            font-size: 0.9rem;
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.25rem;
+            font-size: 0.82rem;
+            color: #8E7F74;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background: var(--whatsapp-green);
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 999;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 860px) {
+            .hero-inner, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-cream);
+                flex-direction: column;
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border-light);
+                gap: 1rem;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">M</div>
+                <div class="logo-text">
+                    <span>Muzammil Woodcraft</span>
+                    <small>Artisan Carpentry &amp; Woodworks</small>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">&#9776;</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#craftsmanship">Our Craft</a></li>
+                <li><a href="#custom-order">Custom Order</a></li>
+            </ul>
+
+            <a href="#custom-order" class="nav-cta">Request Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <span class="badge">Handcrafted in Dera Ismail Khan &bull; Est. 2010</span>
+                <h1>Timeless Solid Wood Furniture &amp; Custom Handicrafts</h1>
+                <p>From heavy carved main doors and modern home furniture to precision-crafted wooden mobile stands, desk organizers, and handmade wooden toys—built with seasoned timber and traditional lacquer art.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">Explore Collection</a>
+                    <a href="#custom-order" class="btn-outline">Order Custom Design</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <h3>15+ Yrs</h3>
+                        <p>Master Woodworking Heritage</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p>Seasoned Solid Timber</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Custom</
